@@ -25,12 +25,25 @@ function getLocation (){
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(function(position){
 			lat = position.coords.latitude;
-			lon = position.coords.langtitude;
+			lon = position.coords.longitude;
 			removeButton();
 		});
 		
 	}else{
 		alert("Geolocation is not supported by your browser");
+	}
+	console.log(lat + "   " + lon);
+	//setTimeout(getWeather,5000);
+	checkCoords();
+}
+
+function checkCoords(){
+	if(lat==0){
+		setTimeout(checkCoords,1000);
+		console.log("delaying");
+	}else if(lat!==0){
+		console.log(lat + "   " + lon);
+		setTimeout(getWeather,1000);
 	}
 }
 
@@ -55,12 +68,16 @@ var request = new XMLHttpRequest();
 	request.send();
 request.onload = function(){
 	weatherJson = request.response;
-
+	console.log(weatherJson);
+	if(weatherJson.weather[0].icon==undefined){
+	checkCoords();
+	}else{
 	//execute various functions
+	insertIcon();
 	printWeather();
 	changeBg();
-	insertIcon();
 	showHidden();
+	}
 };
 }
 
@@ -73,7 +90,7 @@ function showHidden(){
 
 //Feed weather data to html
 function printWeather(){
-	console.log(weatherJson.weather[0].icon);
+	//console.log(weatherJson.weather[0].icon);
 	console.log(weatherJson.weather[0].id);
 	console.log(weatherJson.main.temp + " Celcius");
 	document.getElementById("weather").innerHTML = weatherJson.weather[0].description;
