@@ -79,7 +79,7 @@ body {
 	font-size:17px;
 	line-height:50px;
 	text-align:center;
-	background: rgb(133,133,133,0.6);
+	background: rgba(133,133,133,0.6);
 	border-radius:5px;
 	box-shadow:5px 5px 10px black;
 	padding:10px 20px;
@@ -105,7 +105,7 @@ button {
 	height:40px;
 	margin:2px;
 	margin-top:10px;
-	background: rgb(133,133,133,0.6);
+	background: rgba(133,133,133,0.6);
 	border-radius:5px;
 	box-shadow:5px 5px 10px black;
 }
@@ -135,7 +135,7 @@ button::-moz-focus-inner {
   cursor: pointer;
   width:68px;
   height:34px;
-  background-color:rgb(133,133,133,0.6);
+  background-color:rgba(133,133,133,0.6);
   -webkit-transition: .4s;
   transition: .4s;
   box-shadow:5px 5px 5px black;
@@ -159,11 +159,11 @@ button::-moz-focus-inner {
 }
 
 input:checked + .slider {
-  background-color: rgb(133,133,133,0.6);
+  background-color: rgba(133,133,133,0.6);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px rgb(133,133,133,0.6) ;
+  box-shadow: 0 0 1px rgba(133,133,133,0.6) ;
 }
 
 input:checked + .slider:before {
