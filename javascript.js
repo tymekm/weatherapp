@@ -1,3 +1,6 @@
+var lat = 0;
+var lon = 0;
+
 //initializing JSON
 var weatherJson=0;
 
