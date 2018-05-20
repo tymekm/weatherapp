@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="bg" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>WeatherApp</title>
+</head>
+<body class="bg">
+
+		<label class="switch">
+			<input id="checkbox" onclick="convertTemp()" type="checkbox">
+			<span class="slider">
+				<span class="slider-label">℃</span>
+				<span class="slider-label">℉</span>
+			</span>
+		</label>
+
+	<div  id="flexbox">
+
+		<div><h1 id="header">Weather App</h1></div>
+		<p class="spacer"></p>
+		<div class="flex-row hidden" id="temp-row">
+			<div id="temp"></div>
+			<div id="icon"></div>
+		</div>
+		<div class="flex-row hidden" id="weather-row">
+			<div id="location"></div>
+			<div id="weather"></div>
+			<div id="wind"></div>
+		</div>
+		<div id="buttons">
+			<div><button id="geo-allow" onclick="getLocation(), getWeather()">Click to allow geolocation</button></div>
+			<button id="refresh" onclick="getWeather()">Refresh</button>
+		</div>
+	</div>
+	<footer>
+		<p>View the source code at <a href="http://github.com/tymekm/weatherapp">Github</a></p>
+	</footer>
+</body>
+</html>
+<script src="javascript.js"></script>
